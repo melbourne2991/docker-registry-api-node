@@ -1,0 +1,22 @@
+{
+  "name": "docker-registry-api",
+  "version": "0.0.0",
+  "description": "Docker Registry API Node Wrapper",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "docker",
+    "registry",
+    "docker.io",
+    "node",
+    "api"
+  ],
+  "author": "Will Leach",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "~2.4.1",
+    "request": "~2.48.0"
+  }
+}
