@@ -2,12 +2,18 @@ var _ = require('lodash'),
 	request = require('request');
 
 var DockerRegistry = function(opts) {
-	this.API_URL = opts.apiUrl || 'https://registry.hub.docker.com/v1/';
+	var opts = opts || {};
+	this.API_URL = opts.apiUrl || 'https://index.docker.io/v1/';
 };
 
 DockerRegistry.prototype.search = function(searchTerm, cb) {
-	var searchTermEnc = encodeURIComponent(searchTerm);
-	request.get('/v1/search?q=' + searchTermEnc, function(err, res, body) {
+	var query = this.API_URL + 'search?q=' + encodeURIComponent(searchTerm);
+	console.log(query)
+	request.get(query, function(err, res, body) {
 		cb(err, body);
 	});
 };
+
+module.exports = new DockerRegistry();
+
+
